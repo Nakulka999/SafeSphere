@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Sentinel Custom Colors */
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-surface: var(--surface);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-error: var(--error);
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+:root {
+  --background: #fef8f4;
+  --foreground: #1d1b19;
+  --primary: #5e5346;
+  --primary-container: #776b5d;
+  --on-primary-container: #feeddc;
+  --secondary: #655d4f;
+  --secondary-container: #ede1ce;
+  --tertiary: #595449;
+  --surface: #fef8f4;
+  --surface-container: #f2ede9;
+  --surface-container-low: #f8f3ef;
+  --surface-container-lowest: #ffffff;
+  --surface-container-high: #ece7e3;
+  --surface-container-highest: #e6e2de;
+  --on-surface: #1d1b19;
+  --on-surface-variant: #4c463e;
+  --outline: #7e766d;
+  --outline-variant: #cfc5bb;
+  --error: #ba1a1a;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: #1d1b19;
+  --foreground: #fef8f4;
+  --primary: #d3c4b3;
+  --surface: #1d1b19;
+  /* Add other dark mode variants if needed */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  html {
+    @apply font-sans;
+  }
+}

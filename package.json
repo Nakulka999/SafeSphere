@@ -1,0 +1,12 @@
+{
+  "name": "safecity-workspace",
+  "version": "1.0.0",
+  "scripts": {
+    "app:dev": "npm run dev --prefix safecity-app",
+    "backend:start": "cd safecity-backend && python -m app.main",
+    "install:all": "npm install && npm install --prefix safecity-app && pip install -r safecity-backend/requirements.txt"
+  },
+  "dependencies": {
+    "firebase": "^12.13.0"
+  }
+}
